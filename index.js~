@@ -1,0 +1,14 @@
+  var pushWoosh = require('pushwoosh');
+  var pushClient= new pushWoosh("SxUGjDOZqIGFAFjpskYwDgeY5Ulm4J3R9IoZWmsBh2l1G1Q2lhxxBk5MbSbjonzEgRc0skBXpgEtbdbKCWzo","0456C-F5F07");
+
+  var config={
+  "send_date":"now",
+  "ignore_user_timezone": true,
+  "content":"test push message",
+  "data":{"custom":"this is a test"}
+};
+
+pushClient.sendMessage(config).then(function(data){
+
+console.log(data.status_code);
+});
